@@ -1,0 +1,5 @@
+{
+  "name": "West Boca Baptist Church",
+  "description": "A welcoming community in Coconut Creek, FL, dedicated to connecting people with Jesus, strengthening families, and making disciples.",
+  "requestFramePermissions": ["geolocation"]
+}
