@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import logoImg from '../assets/logo/logo.webp';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a href="#" className="flex items-center gap-3 group">
           <img 
-            src="logo/logo.webp" 
+            src={logoImg} 
             alt="West Boca Baptist Church Logo" 
             className="h-14 w-auto group-hover:scale-105 transition-transform"
           />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Mail, MapPin, Clock } from 'lucide-react';
+import topPhoto from '../assets/background/top-photo.jpg';
 
 export default function TopSection() {
   return (
@@ -14,7 +15,7 @@ export default function TopSection() {
           className="relative rounded-[32px] overflow-hidden shadow-2xl border border-church-ink/5 group"
         >
           <img
-            src="background/top-photo.jpg"
+            src={topPhoto}
             alt="West Boca Baptist Church"
             className="w-full h-auto block"
             onError={(e) => {

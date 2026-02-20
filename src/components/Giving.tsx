@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { QrCode, Heart } from 'lucide-react';
+import qrCodeImg from '../assets/qr/qr-code.webp';
 
 export default function Giving() {
   return (
@@ -32,7 +33,7 @@ export default function Giving() {
             >
               <div className="bg-white rounded-[40px] shadow-2xl mb-8 overflow-hidden w-64 h-64 md:w-80 md:h-80">
                 <img 
-                  src="qr/qr-code.webp" 
+                  src={qrCodeImg} 
                   alt="Giving QR Code" 
                   className="w-full h-full object-cover"
                   onError={(e) => {

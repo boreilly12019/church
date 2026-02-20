@@ -7,9 +7,19 @@ export default function Gallery() {
   const [isPaused, setIsPaused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const images = Array.from({ length: 13 }, (_, i) => ({
-    url: `gallery/${i + 1}.jpg`
-  }));
+  // Dynamically import all images from the gallery folder
+  const galleryImages = import.meta.glob('../assets/gallery/*.jpg', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+  
+  // Create an array of image URLs, sorted by filename number
+  const images = Object.keys(galleryImages)
+    .sort((a, b) => {
+      const numA = parseInt(a.match(/\/(\d+)\.jpg$/)?.[1] || '0');
+      const numB = parseInt(b.match(/\/(\d+)\.jpg$/)?.[1] || '0');
+      return numA - numB;
+    })
+    .map(path => ({
+      url: galleryImages[path]
+    }));
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
